@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/Others/Admin.css">
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script language="javascript" type="text/javascript" src="../static/general.js"></script>
+    <script language="javascript" type="text/javascript" src="../static/admin/admin.js"></script>
+</head>
+
+{% if  session.get('rol')=="ADMINISTRADOR" %}
+<body onload="cargar_eventos_admin()">
+    
+<!--MENUUU-->
+
+<div class="topnav" id="myTopnav">
+    <a href="admin" class="active" > Home </a>
+    <a href="newproduct" > Crear Producto </a>
+    <a href="pendingorder" > Pedidos Pendiente </a>
+    <a href="bannereditor" >Editor Principal</a>  
+    <a href="logout1" class="Live"> Cerrar sesion</a>
+</div>
+
+<div style="padding-left:16px">
+    <h1> Productos. </h1>
+    <hr>
+</div>
+
+<div class="lista-productos" id="idproductos">
+    <!--
+    <div class="producto">
+        <img src="C:\Users\Vanesa\Documents\Programacion Web (2do Cuatri)\01-02 HTML y CSS\01html\Beerseba\Remera Estampada.jpg" alt="Remera de Morley" class="miniatura">
+        <h4>Remera de Morley </h4>
+        <button class="boton-editar">Editar</button>
+    </div>
+
+    <div class="producto">
+        <img src="C:\Users\Vanesa\Documents\Programacion Web (2do Cuatri)\01-02 HTML y CSS\01html\Beerseba\Pantalon Cuerina.jpg" alt="Pantalon negro de Cuerina" class="miniatura">
+        <h4>Pantalon Cuerina</h4>
+        <button class="boton-editar">Editar</button>
+    </div>
+
+    <div class="producto">
+        <img src="C:\Users\Vanesa\Documents\Programacion Web (2do Cuatri)\01-02 HTML y CSS\01html\Beerseba\Recto de Bengalina .jpg" alt="Recto de Bangalina" class="miniatura">
+        <h4>Recto de Bangalina</h4>
+        <a href=""><button class="boton-editar">Editar</button></a>
+    </div>
+
+    <div class="producto">
+        <img src="C:\Users\Vanesa\Documents\Programacion Web (2do Cuatri)\01-02 HTML y CSS\01html\Beerseba\estampada.JPG" alt="Blusa de Lino" class="miniatura">        
+        <h4>Blusa de Lino</h4>
+        <a href=""><button class="boton-editar">Editar</button></a>
+    </div>
+
+    <div class="producto">
+        <img src="C:\Users\Vanesa\Documents\Programacion Web (2do Cuatri)\01-02 HTML y CSS\01html\Beerseba\Saco Barbie.jpg" alt="Saco fucsia de crep brilloso" class="miniatura">
+        <h4>Saco de Crep Brilloso </h4>
+        <a href=""><button class="boton-editar">Editar</button></a>
+    </div>
+
+     Más productos -->
+</div>
+
+
+
+</body>
+{% endif %}
+</html>
+
+

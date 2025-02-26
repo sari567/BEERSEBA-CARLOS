@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="../static/editprofile/editprofile.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script language="javascript" type="text/javascript" src="../static/general.js"></script>    
+    <script language="javascript" type="text/javascript" src="../static/editprofile/editprofile.js"></script>
+</head>
+
+<body id="cuerpo_1" onload="cargar_eventos_editprofile()">
+
+  <!--MENUU-->
+  <div id="java1">
+  </div>
+  
+  {% if  session.get('nombre')!=None %}
+  <form id="form10" class="box3" action="/receivedataeditprofile" method="post" enctype="multipart/form-data">
+
+      <div class="grid-item item00">
+          <h3>Configuración de Cuenta</h3>
+      </div>
+
+      <div class="profile-pic">
+          <img src="../static/upload/{{session.get('imagen')}}" alt=""> <br><br>
+          <input type="file" name="fileToUpload" id="imguser">
+      </div>  
+      <div class="grid-item item01">
+          <label for="nom01" class="box1">Nombre:</label><br>
+          <input class="w3-input" type="text" id="nombre" name="nombre" value="{{session.get('nombre')}}"><br>
+
+          <label for="nom01" class="box1">Apellido:</label><br>
+          <input class="w3-input" type="text"  id="apellido" name="apellido" value="{{session.get('apellido')}}"><br>
+
+          <label for="nom01" class="box1">Celular:</label><br>
+          <input class="w3-input" type="text" id="celular" name="celular" value="{{session.get('celular')}}"><br>
+      </div>
+
+      <div class="grid-item item01-5">
+
+          <label class="box1">Email:</label><br>
+          <p class="w3-input">{{session.get('mail')}}</p>
+          <input class="w3-input" id="mail" name="mail" value="{{session.get('mail')}}" type="hidden">
+          
+          <span class="barra"></span>
+          <br>
+
+
+          <label class="box1">Tipo de documento:</label><br>
+          <select class="w3-input" class="box1" name="seleccionar" title="Seleccione...">
+              <option value="0" >Seleccionar..</option>
+              {% if  session.get('tipodni')=='DNI' %}
+              <option value="DNI" selected>DNI</option>
+              <option value="Pasaporte">Pasaporte</option>
+              {% endif %}
+              {% if  session.get('tipodni')=='Pasaporte' %}
+              <option value="DNI">DNI</option>
+              <option value="Pasaporte" selected>Pasaporte</option>
+              {% endif %}      
+          </select><br>
+      
+          <label class="box1">N° de documento:</label><br>
+          <input class="w3-input" name="identity" type="text" id="documento" value="{{session.get('numerodni')}}"><br>
+
+      </div>
+
+      <div class="grid-item item02">
+
+        <label class="box1">Contraseña:</label><br>
+        <input class="w3-input" type="password" id="contra" name="clave"/><br>
+
+
+      </div>
+
+
+      <div class="grid-item lastbtn">
+          <button type="submit" class="box2" id="button_prueba">Guardar Cambios</button>
+      </div>
+      <h4>{{param}}</h4>
+
+  </form>
+  {% endif %}
+  
+    
+</body>
+</html>

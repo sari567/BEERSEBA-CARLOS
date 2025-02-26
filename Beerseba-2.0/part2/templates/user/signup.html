@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="../static/signup/signup.css">
+      <link rel="stylesheet" href="../static/homepage/homepage.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+      <script language="javascript" type="text/javascript" src="../static/general.js"></script>
+      <script language="javascript" type="text/javascript" src="../static/signup/signup.js"></script>
+      <title>Sign up</title>
+
+  </head>
+
+  <body id="cuerpo" onload="cargar_eventos_signup()">
+
+    <div id="java1">
+    </div>
+
+    <div class="box0">
+    <form class="box3" name="mysignup" id="mysignup" action="/receivedatasignup" method="post">
+            <h4>{{param}}</h4>
+            <h3>Regístrate para comprar</h3><br>
+
+            <label for="cor01" class="box1">Email:</label><br>
+            <input id="id_mail" name="mail" class="w3-input"  type="email" placeholder="Ingresa tu email.."><br>
+            <p id="alerta_mail" class="anular">Por favor de ingresar un e-mail valido</p>
+
+            <label for="nom01" class="box1">Nombres:</label><br>
+            <input id="id_nombre" name="nombre" class="w3-input" type="text" placeholder="Ingresa tu nombre.."><br>
+            <p id="alerta_nombre" class="anular">Por favor de ingresar unos nombres valido</p>
+
+            <label for="ape01" class="box1">Apellidos:</label><br>
+            <input id="id_apellido" name="apellido" class="w3-input" type="text" placeholder="Ingresa tu apellido.."><br>
+            <p id="alerta_apellido" class="anular">Por favor de ingresar unos apellidos valido</p>
+
+            <label class="box1">Tipo de documento:</label><br>
+            <select id="id_seleccionar" name="seleccionar" class="w3-input" class="box1" title="Seleccione...">
+                <option value="0" disabled selected>Seleccionar..</option>
+                <option value="DNI">DNI</option>
+                <option value="Pasaporte">Pasaporte</option>
+            </select><br>
+            <p id="alerta_seleccionar" class="anular">Por favor de seleccionar una opcion valida</p>
+
+
+            <label class="box1">N° de documento:</label><br>
+            <input id="id_identity" name="identity" class="w3-input" type="text" placeholder="Ingresa tu DNI.."><br>
+            <p id="alerta_identity" class="anular">Por favor de ingresar un numero de documento valido</p>
+
+            <label class="box1">Celular:</label><br>
+            <input id="id_celular" name="celular" class="w3-input" type="text" placeholder="Ingresa celular.."><br>
+            <p id="alerta_celular" class="anular">Por favor de ingresar un mumero celular valido</p>
+
+            <label class="box1">Clave:</label><br>
+            <input id="id_clave" name="clave" class="w3-input" type="password" placeholder="Ingresa clave.."/><br>
+            <p id="alerta_clave" class="anular">
+            La contraseña debe tener:<br>
+            -Al entre 8 y 16 caracteres<br> 
+            -Al menos un dígito<br> 
+            -Al menos una minúscula<br> 
+            -Al menos una mayúscula<br> 
+            -Al menos un caracter no alfanumérico<br>
+            </p>
+
+            <input id="id_box4"name="box4" class="box4" type="checkbox" value="ok"/>
+            <label class="box4" style="color: #aaa2a2;">Acepto los términos y condiciones de "Beerseba" y autorizo la política de privacidad.</label><br><br>
+            <p id="alerta_box" class="anular"> Por favor de aceptar los terminos y condiciones</p>
+			      <div class="register"></div>
+				    <p>¿Ya tiene cuenta?
+					  <a href="/loginuser">Log In</a>
+				    </p>
+
+            
+            <button type="submit" class="box2" id="id_button">Registrarme</button>
+    </form>
+    </div>
+    
+  </body>
+</html>

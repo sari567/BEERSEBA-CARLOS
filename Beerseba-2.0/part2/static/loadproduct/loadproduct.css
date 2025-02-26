@@ -1,0 +1,87 @@
+/*parte de css de formulario de cargar el producto*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4eb566;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #4eb566;
+}
+
+#productList {
+    margin-top: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.color-option {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+.color-box {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #000;
+}
+
+.rojo { background-color: red; }
+.azul { background-color: blue; }
+.verde { background-color: green; }
+.negro { background-color: black; }
+.blanco { background-color: white; border: 1px solid #000; }
+
+label {
+    margin-left: 5px;
+}

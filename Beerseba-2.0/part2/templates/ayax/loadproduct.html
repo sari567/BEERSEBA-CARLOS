@@ -1,0 +1,13 @@
+
+
+{# recorre la sesion compras #}
+  {% for product in param %}
+  <div class="producto">
+        <a href="/productos/{{product[0]}}"><img src="{{product[3]}}" alt="{{product[1]}}"></a>
+        <h3>{{product[1]}}</h3>
+        {% if  session.get('rol')=="ADMINISTRADOR" %}
+        <button class="boton-editar">Editar</button>
+        {% endif %}
+   </div>
+  {% endfor %}
+    

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/Others/Admin.css">
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    
+
+<!--MENUUUU-->
+<div class="topnav" id="myTopnav">
+    <a href="admin" class="active" > Home </a>
+    <a href="newproduct" > Crear Producto </a>
+    <a href="pendingorder" > Pedidos Pendiente </a>
+    <a href="bannereditor" >Editor Principal</a>  
+    <a href="logout1" class="Live"> Cerrar sesion</a>
+</div>
+
+<div style="padding-left:16px">
+    <h1> Edición Banner Principal </h1>
+    <hr>
+</div>
+
+<!-- Formulario para cambiar el texto de la página principal -->
+<div style="padding-left:16px">
+    <h2> Editar texto de la página principal </h2>
+    <label for="nuevoTexto">Nuevo texto para la página principal:</label>
+    <input type="text" id="nuevoTexto" placeholder="Escribe el nuevo texto">
+    <button onclick="cambiarTexto()">Guardar cambios</button>
+    <hr>
+</div>
+
+<!-- Formulario para cambiar la imagen de la página principal -->
+<div style="padding-left:16px">
+    <h2> Editar primera imagen de la página principal </h2>
+    <label for="nuevaImagen">URL de la nueva imagen:</label>
+    <input type="text" id="nuevaImagen" placeholder="Escribe la URL de la nueva imagen">
+    <button onclick="cambiarImagen()">Guardar imagen</button>
+    <hr>
+</div>
+<div style="padding-left:16px">
+    <h2> Editar segunda imagen de la página principal </h2>
+    <label for="nuevaImagen">URL de la nueva imagen:</label>
+    <input type="text" id="nuevaImagen" placeholder="Escribe la URL de la nueva imagen">
+    <button onclick="cambiarImagen()">Guardar imagen</button>
+    <hr>
+</div>
+<script>
+    // Función para cambiar el texto de la página principal
+    function cambiarTexto() {
+        var nuevoTexto = document.getElementById("nuevoTexto").value;
+        localStorage.setItem("textoPrincipal", nuevoTexto);
+        alert("El texto se ha actualizado. Visita la página principal para ver los cambios.");
+    }
+
+    // Función para cambiar la imagen de la página principal
+    function cambiarImagen() {
+        var nuevaImagen = document.getElementById("nuevaImagen").value;
+        localStorage.setItem("imagenPrincipal", nuevaImagen);
+        alert("La imagen se ha actualizado. Visita la página principal para ver los cambios.");
+    }
+</script>
+
+</body>
+</html>

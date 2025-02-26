@@ -1,0 +1,319 @@
+
+form{
+    margin-top: 20px;
+}
+
+hr{
+    font-weight: bolder;
+}
+
+.box2 {
+
+    /*registrarse*/
+    margin-left: 0.5%;
+    font-weight: lighter;
+    width: 80%;
+    border: none;
+    color: white;
+    background: linear-gradient(to right, #FF5E62, #FF9966) ;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 20px;
+    font-weight: bold;
+    height: 35px;
+
+}
+.box3 {
+    display: grid;
+    background-color: white;
+    gap: 30px;
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 20px;
+    margin-left: 9%;
+    margin-bottom: 2%;
+    border-color: black;
+    border-radius: 15px;
+    text-align: left;
+    font-size: small;
+    width: 80%;
+    box-shadow: 0px 2px 8px 0px #a5a5a5be;
+
+    
+}
+
+.box4{
+    color: #aaa2a2;
+    width: 20%;
+}
+
+
+h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+label{
+    font-weight: bolder;
+}
+
+.c01{
+    grid-area: main;
+    width: 80%;
+    padding-left: 0px;
+}
+
+.c02{
+    grid-area: right;
+    width: 90%;
+}
+
+.item00{
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    border-bottom: 0.5px solid #FF9966;
+    border-width: 50%;
+}
+
+.profile-pic{ 
+    width: 30%;   
+    grid-column: 1;
+    grid-row: 2 / span 4;
+    padding-left: 0;
+    margin-left: 20%;
+    margin-top: 3%;
+}
+
+.item01{
+    padding-left: 0;
+    grid-column: 2;
+    grid-row: 2 ;
+    width: 100%;
+    margin-top: 3%;
+
+}
+
+.item01-5{
+    grid-column:3;
+    grid-row: 2 ;
+    width: 100%;
+    margin-top: 3%;
+
+}
+
+.item02{
+    grid-column: 2 / span 2;
+    grid-row: 5;
+    width: 70%;
+    margin-top: -10%;
+    margin-bottom: -6%;
+}
+
+.profile-pic input{
+    padding-left: 0px;
+    font-size: x-small;
+}
+
+
+.profile-pic img{
+    border-radius: 60%;
+    width: 100px;
+    height: 100px;
+}
+
+
+.lastbtn{
+    grid-column: 1/ span 3;
+    grid-row: 6 ;
+    justify-items: center;
+    padding: 20px;
+    padding-top: 5%;
+    margin-left: 30%;
+
+}
+    
+.box1{
+    width: 20%;
+}
+
+
+
+a{
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+
+    .item00{
+        text-align: center ;
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        border-bottom: 0.5px solid #FF9966;
+        border-width: 100%;
+        margin-left: 30%;
+    }
+
+    .item01-5{
+        margin-top: -5%;
+    }
+
+    .item02{
+        margin-top: -3%;
+    }
+    
+    .profile-pic{
+        margin-left: 45%;
+        margin-top: 0;
+    }
+
+    .profile-pic img{
+        border-radius: 60%;
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .profile-pic input{
+        padding-left: 0px;
+        font-size: xx-small;
+    }
+    
+    
+    .profile-pic img{
+        border-radius: 60%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .box3{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-bottom: 2%;
+            border-radius: 15px;
+            text-align: left;
+            border: none;
+            font-size: small;
+            width: 80%;
+            
+    }
+
+    .box2 {
+
+        /*registrarse*/
+        width: 100%;
+        border: none;
+        color: white;
+        background: linear-gradient(to right, #FF5E62, #FF9966) ;
+        cursor: pointer;
+        border-radius: 10px;
+        height: 35px;
+        font-weight: lighter;
+    
+    }
+    
+    .lastbtn{
+        grid-column: footer;
+        justify-items: center;
+        padding: 20px;
+        padding-top: 5%;
+        width: 60%;
+        margin-right: 0%;
+        margin-left: 2%;
+
+    }
+
+    .w3-input{
+        width: 90%;
+        margin: 10px;
+    }
+    label{
+        margin-left: 10px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+ 
+    .item00{
+        text-align: center ;
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        border-bottom: 0.5px solid #FF9966;
+        border-width: 100%;
+        margin-left: 13%;
+    }
+
+    .item01-5{
+        margin-top: -8%;
+    }
+    
+    .profile-pic{
+        margin-left: 35%;
+    }
+    .profile-pic input{
+        padding-left: 0px;
+        font-size: xx-small;
+    }
+    
+    
+    .profile-pic img{
+        border-radius: 60%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .box3{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-bottom: 2%;
+            border-radius: 15px;
+            text-align: left;
+            border: none;
+            font-size: small;
+            width: 80%;
+            
+    }
+
+    .box2 {
+
+        /*registrarse*/
+        width: 100%;
+        border: none;
+        color: white;
+        background: linear-gradient(to right, #FF5E62, #FF9966) ;
+        cursor: pointer;
+        border-radius: 10px;
+        height: 35px;
+        font-weight: lighter;
+    
+    }
+    
+    .lastbtn{
+        grid-column: footer;
+        justify-items: center;
+        padding: 20px;
+        padding-top: 5%;
+        width: 60%;
+        margin-right: 0%;
+        margin-left: 2%;
+
+    }
+
+    .w3-input{
+        width: 90%;
+        margin: 10px;
+    }
+    label{
+        margin-left: 10px;
+    }
+
+}
+

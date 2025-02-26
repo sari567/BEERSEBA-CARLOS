@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script language="javascript" type="text/javascript" src="../static/general.js"></script>
+    <script language="javascript" type="text/javascript" src="../static/help&support/help&support.js"></script>
+
+</head>
+<body onload="cargar_eventos_helpandsupport()">
+
+
+  <div id="java1">
+  </div>
+
+  <div class="nav-extra" id="nav-adicional">
+    <input type="search" placeholder="Buscar">
+    {% if  session.get('nombre')!=None %}        
+    <div class="profile-dropdown" id="parte2">
+            <!-- Nombre e imagen -->
+            <div class="profile-dropdown-btn" >
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+              <span>
+                  {{session.get('nombre')}}
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
+            </div>
+            <!-- Desplegable 2 -->
+            <div class="profile-dropdown-list">
+              <div class="profile-dropdown-list-item">
+                <a href="/editprofile">
+                  <i class="fa-regular fa-user"></i>
+                  Editar Perfil
+                </a>
+              </div> 
+
+              <div class="profile-dropdown-list-item">
+                <a href="/favorites">
+                  <i class="fas fa-heart"></i>
+                  Favoritos
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+              <a href="/mypurchases">
+                <i class="fa-solid fa-chart-line"></i>
+                  Mis Compras
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/helpsupport">
+                  <i class="fa-regular fa-circle-question"></i>
+                  Ayuda & Soporte
+                </a>
+              </div>
+              <hr/>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/logout" id="salir">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Salir
+                </a>
+              </div>
+            </div>
+    </div>
+    {% else %}        
+    <div class="cont-parte1" id="parte1">
+      <a href="/signup">Crear cuenta</a> | <a href="/loginuser">Iniciar sesión</a>
+    </div>
+    {% endif %}
+  </div>
+  
+  <hr>
+  <section class="help" id="help">
+
+          <div class="prefacio ">
+            <h1 class="heading">Contactanos</h1>
+            <p>Tratamos de mejorar cada día. Si tuvo algún inconveniente con la página, el envío, o le gustaria dejar una sugerencia, no dude en escribirnos. Nos comunicaremos con usted lo más pronto posible. <br><br>  Su satisfacción es nuestro objetivo principal siempre. </p>
+            <!--<img class="image"  src="../static/pics/Creative team-pana.png" alt=""> -->
+          </div>
+
+          <div class="row">
+              <form action="" id="contacto">
+
+                  <input type="text" placeholder="Nombre Completo" class="box"  id="box-name" >
+                  <div class="warningS">
+                    <p class="warning" id="warning-name"></p>
+                  </div>
+
+                  <input type="email" placeholder="Email" id="box-email" class="box"  >
+                  <div class="warningS">
+                    <p class="warning" id="warning-mail"></p>
+                  </div>
+
+                  <input type="text" placeholder="Número de Contacto" id="box-number" class="box"  >
+                  <div class="warningS">
+                    <p class="warning" id="warning-number"></p>
+                  </div>
+
+                  <textarea name="" class="text-box" id="text-box" cols="50" rows="10" placeholder="Cuentenos..." ></textarea>
+                  <div class="warningS">
+                    <p class="warning" id="warning-texto"></p>
+                  </div>
+
+                  <button type="submit" class="form-btn">Enviar Mensaje</button>
+  
+              </form>
+              
+          </div>
+
+
+          
+
+  </section>
+
+</body>
+</html>

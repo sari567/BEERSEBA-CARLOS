@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beerseba</title>
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script language="javascript" type="text/javascript" src="../static/homepage/homepage.js"></script>
+
+
+
+</head>
+
+<body id="cuerpo_1" onload="cargar_eventos_homepage()">
+
+  <div id="java1">
+  </div>
+
+  <div class="nav-extra" id="nav-adicional">
+    <input type="search" placeholder="Buscar">
+    {% if  session.get('nombre')!=None %}        
+    <div class="profile-dropdown" id="parte2">
+            <!-- Nombre e imagen -->
+            <div class="profile-dropdown-btn" >
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+              <span>
+                  {{session.get('nombre')}}
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
+            </div>
+            <!-- Desplegable 2 -->
+            <div class="profile-dropdown-list">
+              <div class="profile-dropdown-list-item">
+                <a href="/editprofile">
+                  <i class="fa-regular fa-user"></i>
+                  Editar Perfil
+                </a>
+              </div> 
+
+              <div class="profile-dropdown-list-item">
+                <a href="/favorites">
+                  <i class="fas fa-heart"></i>
+                  Favoritos
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+              <a href="/mypurchases">
+                <i class="fa-solid fa-chart-line"></i>
+                  Mis Compras
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/helpsupport">
+                  <i class="fa-regular fa-circle-question"></i>
+                  Ayuda & Soporte
+                </a>
+              </div>
+              <hr/>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/logout" id="salir">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Salir
+                </a>
+              </div>
+            </div>
+    </div>
+    {% else %}        
+    <div class="cont-parte1" id="parte1">
+      <a href="/signup">Crear cuenta</a> | <a href="/loginuser">Iniciar sesión</a>
+    </div>
+    {% endif %}
+  </div>
+
+<!-- Lista de productos -->
+    <section class="products">
+        <h2>Mis Favoritos</h2>
+        <div class="products-grid">
+            <div class="product">
+                <img src="pics\Recto de Bengalina .jpg" alt="Recto de Bengalina Negro">
+                <h3>Recto de Bengalina</h3>
+                <p>$12.500,00</p>
+                <div class="container-buttons-card">
+                  <button class="favorite">
+                    <!--<i
+                      class="fa-regular fa-heart"
+                      id="favorite-regular"
+                    ></i>-->
+                    <i
+                      class="fa-solid fa-heart"
+                      id="added-favorite"
+                    ></i>
+                  </button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="pics\Pantalon Cuerina.jpg" alt="Pantalon de Cuerina Negro">
+                <h3>Pantalon de Cuerina</h3>
+                <p>$14.150,00</p>
+                <div class="container-buttons-card">
+                  <button class="favorite">
+                    <!--<i
+                      class="fa-regular fa-heart"
+                      id="favorite-regular"
+                    ></i>-->
+                    <i
+                      class="fa-solid fa-heart"
+                      id="added-favorite"
+                    ></i>
+                  </button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="pics\Saco Barbie.jpg" alt="Saco Fucsia Brilloso">
+                <h3>Saco Brilloso</h3>
+                <p>$14.150,00</p>
+                <div class="container-buttons-card">
+                  <button class="favorite">
+                    <!--<i
+                      class="fa-regular fa-heart"
+                      id="favorite-regular"
+                    ></i>-->
+                    <i
+                      class="fa-solid fa-heart"
+                      id="added-favorite"
+                    ></i>
+                  </button>
+                </div>
+            </div>
+            <div class="product">
+              <img src="pics/conjunto verde.jpg" alt="Conjunto verde Sastrero">
+              <h3>Conjunto Sastrero</h3>
+              <p>$14.150,00</p>
+              <div class="container-buttons-card">
+                <button class="favorite">
+                  <!--<i
+                    class="fa-regular fa-heart"
+                    id="favorite-regular"
+                  ></i>-->
+                  <i
+                    class="fa-solid fa-heart"
+                    id="added-favorite"
+                  ></i>
+                </button>
+              </div>
+          </div>
+
+            <!-- Añade más productos según sea necesario -->
+        </div>
+    </section>
+
+
+
+</body>
+</html>

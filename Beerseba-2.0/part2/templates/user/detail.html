@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogger de bengalina</title>
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="../static/detail/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script language="javascript" type="text/javascript" src="../static/general.js" ></script>
+    <script language="javascript" type="text/javascript" src="../static/detail/detail.js"></script>
+  </head>
+
+<body id="cuerpo_1" onload="cargar_eventos_detail()">
+
+  <div id="java1">
+  </div>
+
+  <div class="nav-extra" id="nav-adicional">
+    <input type="search" placeholder="Buscar">
+    {% if  session.get('nombre')!=None %}        
+    <div class="profile-dropdown" id="parte2">
+            <!-- Nombre e imagen -->
+            <div class="profile-dropdown-btn" >
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+              <span>
+                  {{session.get('nombre')}}
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
+            </div>
+            <!-- Desplegable 2 -->
+            <div class="profile-dropdown-list">
+              <div class="profile-dropdown-list-item">
+                <a href="/editprofile">
+                  <i class="fa-regular fa-user"></i>
+                  Editar Perfil
+                </a>
+              </div> 
+
+              <div class="profile-dropdown-list-item">
+                <a href="/favorites">
+                  <i class="fas fa-heart"></i>
+                  Favoritos
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+              <a href="/mypurchases">
+                <i class="fa-solid fa-chart-line"></i>
+                  Mis Compras
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/helpsupport">
+                  <i class="fa-regular fa-circle-question"></i>
+                  Ayuda & Soporte
+                </a>
+              </div>
+              <hr/>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/logout" id="salir">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Salir
+                </a>
+              </div>
+            </div>
+    </div>
+    {% else %}        
+    <div class="cont-parte1" id="parte1">
+      <a href="/signup">Crear cuenta</a> | <a href="/loginuser">Iniciar sesión</a>
+    </div>
+    {% endif %}
+  </div>
+
+
+  <section class="product-container">
+    
+    <!-- Imagen -->
+    <div class="product-image">
+       <!--<img src="pics/Recto de Bengalina .jpg" alt="Pantalón recto de bengalina">-->
+       <img src="{{param[3]}}">
+    </div>
+              
+    <div class="product-details">
+
+      <div class="container-fav">
+        <button class="btn-fav">
+          <i class="fa-regular fa-heart" id="favorite-regular"></i>
+          <i class="fa-solid fa-heart" id="added-favorite"></i>
+        </button>
+      </div>
+      <!-- Descripcion -->
+      <h1>{{param[1]}}</h1>
+      <p class="installments">Todos los medios de pago</p>
+
+      <form name="form.detalles" id="mypurchase" action="/receivedatamypurchases" method="post">
+        
+        <!--Pendiente de cambio -->
+        <input type="hidden" name="producto" value="{{param[0]}}">
+        <input type="hidden" name="id" value="{{session.get('id')}}">   
+
+        <button class="btn-ajax" id="button_stock" type="button" onclick='queryAjaxForm("/stockproducto", "d_02", "id", "{{param[0]}}", "POST")'> Verificar Stock y Precio Producto</button> 
+        <!--<button class="btn-ajax" id="button_stock" type="button" onclick='queryAjax("/stockproducto", "d_02", "POST", "{{param[0]}}")'> Verificar Stock y Precio Producto</button> --> 
+        <br>
+        <br>
+        
+        <div id="d_02">
+        </div>
+        <br><br>
+        <!--Elegir color -->
+        <div class="color-options">
+                          <h3>COLOR</h3>
+                          
+                          <input type= "radio" id="c1" class="color-option" name="color" value="rojo"/>
+                          <label for="c1" class="color-label" id="c1"></label>
+                          
+                          <input type= "radio" id="c2" class="color-option" name="color" value="marron"/>
+                          <label for="c2" class="color-label" id="c2"></label>
+                          
+                          <input type= "radio" id="c3" class="color-option" name="color" value="rosa"/>
+                          <label for="c3" class="color-label" id="c3" ></label>
+                          
+                          <input type= "radio" id="c4" class="color-option" name="color" value="beige"/>
+                          <label for="c4" class="color-label" id="c4"></label>
+                        
+                          <input type= "radio" id="c5" class="color-option" name="color" value="negro"/>
+                          <label for="c5" class="color-label" id="c5"></label>
+
+                          <input type= "radio" id="c6"  class="color-option" name="color" value="azul"/>
+                          <label for="c6" class="color-label" id="c6"></label>
+
+                          <input type= "radio" id="c7"  class="color-option" name="color" value="verde"/>
+                          <label for="c7" class="color-label" id="c7"></label>
+
+                          <input type= "radio" id="c8"  class="color-option" name="color" value="amarillo"/>
+                          <label for="c8" class="color-label" id="c8"></label>
+
+        </div>
+                    
+        <!--Elegir tamaño -->
+        <div class="size-options">
+                          <h3>TALLE</h3>
+                          
+                          <input type= "radio" id="05"class="size-option" name="talle" value="5"/>
+                          <label for="05" class="size-label">5</label>
+                          
+                          <input type= "radio" id="06"class="size-option" name="talle" value="6"/>
+                          <label for="06" class="size-label">6</label>
+                          
+                          <input type= "radio" id="07"class="size-option" name="talle" value="7"/>
+                          <label for="07" class="size-label">7</label>
+                          
+                          <input type= "radio" id="08"class="size-option" name="talle" value="8"/>
+                          <label for="08" class="size-label">8</label>
+                          
+                          <input type= "radio" id="010"class="size-option" name="talle" value="10"/>
+                          <label for="010" class="size-label">10</label>
+
+        </div>
+
+        <!--Elegir cantidad -->
+        <div class="alinear">
+          <div class="quantity">
+            <input type="number" id="contador" name="cantidad" value="1" min="1" >
+          </div>
+
+          
+          <!-- Boton Comprar -->
+          
+        </div>
+        <br>
+        <br>
+        <h4>{{anuncio}}</h4> 
+        
+
+        <!--- Pendiente de armar con css 
+        <button class="btn-ajax" id="button_stock" type="button" onclick='queryAjax("guiatalle", "d_01")'>Guia de Talle</button>  
+        <div id="d_01"></div>
+        --->
+        
+        
+        
+        <button class="btn-comprar" id="button_prueba" type="submit">Comprar</button>
+        
+      </form>
+      <div class="icon1">
+        <span class="material-symbols-outlined"></span>
+        <b>Tus datos protegidos</b>
+        <p>Tus datos cuidados durante toda la compra</p>
+
+        <b><span class="material-symbols-outlined"></span>    Cambios y devoluciones</b>
+        <p>No se realizan devoluciones de prendas. Se realizan cambios por talle.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+</body>
+</html>
+

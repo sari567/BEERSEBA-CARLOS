@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogger de bengalina</title>
+    <link rel="stylesheet" href="../static/detail/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    
+    <div id="tabla" class="tb">   
+                    <table>
+                        <tr>
+                            <th>Talle</th>
+                            <th>Stock</th>
+                            <th>Color</th>
+                            <th>Precio</th>
+                        </tr>
+                        {% for stock in param %}
+                        <tr>
+                            <td>{{stock[2]}}</td>
+                            <td>{{stock[4]}}</td>
+                            <td>{{stock[5]}}</td>
+                            <td>{{stock[3]}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    
+    </div>
+    
+</body>

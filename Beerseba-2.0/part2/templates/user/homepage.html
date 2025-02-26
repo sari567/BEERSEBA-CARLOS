@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beerseba</title>
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script language="javascript" type="text/javascript" src="../static/homepage/homepage.js"></script>
+    <script language="javascript" type="text/javascript" src="../static/general.js"></script>
+
+</head>
+<body onload="cargar_eventos_homepage()" id="id_homepage">
+
+    <div id="java1">
+    </div>
+
+    <div class="nav-extra" id="nav-adicional">
+      <input type="search" placeholder="Buscar">
+      {% if  session.get('nombre')!=None %}        
+      <div class="profile-dropdown" id="parte2">
+              <!-- Nombre e imagen -->
+              <div class="profile-dropdown-btn" >
+                <div class="profile-img">
+                  <i class="fa-solid fa-circle"></i>
+                </div>
+                <span>
+                    {{session.get('nombre')}}
+                  <i class="fa-solid fa-angle-down"></i>
+                </span>
+              </div>
+              <!-- Desplegable 2 -->
+              <div class="profile-dropdown-list">
+                <div class="profile-dropdown-list-item">
+                  <a href="/editprofile">
+                    <i class="fa-regular fa-user"></i>
+                    Editar Perfil
+                  </a>
+                </div> 
+
+                <div class="profile-dropdown-list-item">
+                  <a href="/favorites">
+                    <i class="fas fa-heart"></i>
+                    Favoritos
+                  </a>
+                </div>
+      
+                <div class="profile-dropdown-list-item">
+                <a href="/mypurchases">
+                  <i class="fa-solid fa-chart-line"></i>
+                    Mis Compras
+                  </a>
+                </div>
+      
+                <div class="profile-dropdown-list-item">
+                  <a href="/helpandsupport">
+                    <i class="fa-regular fa-circle-question"></i>
+                    Ayuda & Soporte
+                  </a>
+                </div>
+                <hr/>
+      
+                <div class="profile-dropdown-list-item">
+                  <a href="/logout" id="salir">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Salir
+                  </a>
+                </div>
+              </div>
+      </div>
+      {% else %}        
+      <div class="cont-parte1" id="parte1">
+        <a href="/signup">Crear cuenta</a> | <a href="/loginuser">Iniciar sesión</a>
+      </div>
+      {% endif %}
+    </div>
+    
+
+    <!-- Banner principal -->
+    <section class="banner">
+        <div class="texto-banner">
+            <h2>Spring <br>NEW COLLECTION</h2>
+            <p>EL VERDADERO PODER VIENE DE ADENTRO</p>
+        </div>
+        <div class="imagenes-banner">
+            <img src="../static/pics/conjunto verde.jpg" alt="Conjunto Sastrero Verde">
+            <img src="../static/pics/Campera de Morley .jpg" alt="CAmpera de Morley">
+        </div>
+        <div class="colores">
+            <!-- Paleta de colores -->
+            <div class="color" style="background-color: #DDBF98;"></div>
+            <div class="color" style="background-color: #E8D0A9;"></div>
+            <div class="color" style="background-color: #B88C68;"></div>
+            <div class="color" style="background-color: #C4733C;"></div>
+            <div class="color" style="background-color: #C3D977;"></div>
+        </div>
+    </section>
+
+
+    <!-- Lista de productos -->
+    <section class="productos">
+      <h2>Productos Disponibles</h2>
+      <div class="productos-grid" id="idproductos">
+        
+      </div>
+  </section>
+</body>
+</html>

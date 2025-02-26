@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="../static/Others/Admin.css">
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+<!--MENUUU-->
+
+
+<div class="topnav" id="myTopnav">
+    <a href="admin" class="active" > Home </a>
+    <a href="newproduct" > Crear Producto </a>
+    <a href="pendingorder" > Pedidos Pendiente </a>
+    <a href="bannereditor" >Editor Principal</a>  
+    <a href="logout1" class="Live"> Cerrar sesion</a>
+</div>
+
+
+<div style="padding-left:16px">
+    <h1> Crear Producto </h1>
+    <hr>
+</div>
+
+
+
+<!--FORMULARIO -->
+<div>
+    <form action="" class="container">
+        <div class="row">
+            <div class="col-25">
+                <label  for="nom01"><strong>Nombre Producto:</strong></label>
+            </div>
+            <div class="col-75">
+                <input  type="text" name="nombre" id="nom01" >
+            </div>
+        </div>
+        
+
+        <div class="row"> 
+            <fieldset>
+                <legend>Categoria</legend>
+                    <div class="product-group">
+                        <input type="radio" id="pantalon" name="id_tipo_producto" class="product" value="1" />
+                        <label for="pantalon" class="product-label">Vestido</label>
+                        
+                        <input type="radio" id="remera" name="id_tipo_producto" class="product" value="2" />
+                        <label for="remera" class="product-label">Pantalon</label>
+                        
+                        <input type="radio" id="vestido" name="id_tipo_producto" class="product" value="3" />
+                        <label for="vestido" class="product-label">Remera</label>
+
+                        <input type="radio" id="vestido" name="id_tipo_producto" class="product" value="4" />
+                        <label for="vestido" class="product-label">Short</label>
+
+                        <input type="radio" id="vestido" name="id_tipo_producto" class="product" value="5" />
+                        <label for="vestido" class="product-label">Blazer</label>
+                    </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend> Talles </legend>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="05" class="checkbox" />
+                        <label for="05" class="checkbox-label">5</label>
+                        
+                        <input type="checkbox" id="06" class="checkbox" />
+                        <label for="06" class="checkbox-label">6</label>
+                        
+                        <input type="checkbox" id="07" class="checkbox" />
+                        <label for="07" class="checkbox-label">7</label>
+
+                        <input type="checkbox" id="08" class="checkbox" />
+                        <label for="08" class="checkbox-label">8</label>
+
+                        <input type="checkbox" id="10" class="checkbox" />
+                        <label for="10" class="checkbox-label">10</label>
+                </div>
+            </fieldset>
+        </div>
+        
+        <div>
+            <fieldset>
+                <legend> <strong>Agregar Imagen</strong></legend>
+                    <div class="row">
+                        <div class="col-75">
+                            <input type="file" name="archivo" id="arch01"/><br><br>
+                        </div>
+            </fieldset>
+        </div>
+    <!-- Sección de Colores -->
+    <div class="row">
+        <fieldset>
+            <legend>Colores</legend>
+            <div class="color-group">
+                <input type="checkbox" id="rojo" class="checkbox-color">
+                <label for="rojo" class="color-label" style="background-color: red;">Rojo</label>
+
+                <input type="checkbox" id="azul" class="checkbox-color">
+                <label for="azul" class="color-label" style="background-color: blue;">Azul</label>
+
+                <input type="checkbox" id="verde" class="checkbox-color">
+                <label for="verde" class="color-label" style="background-color: green;">Verde</label>
+
+                <input type="checkbox" id="negro" class="checkbox-color">
+                <label for="negro" class="color-label" style="background-color: black; color: white;">Negro</label>
+
+                <input type="checkbox" id="blanco" class="checkbox-color">
+                <label for="blanco" class="color-label" style="background-color: white; border: 1px solid #ccc;">Blanco</label>
+            </div>
+        </fieldset>
+    </div>
+        <div class="row">
+            <br>
+            <br>                
+            <input type="submit"  value="Crear">
+
+        </div>
+
+ 
+
+    
+</div>

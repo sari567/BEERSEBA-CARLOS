@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/loginuser/loginuser.css">
+	<link rel="stylesheet" href="../static/homepage/homepage.css">
+	<script language="javascript" type="text/javascript" src="../static/loginuser/loginuser.js"></script>
+	<script language="javascript" type="text/javascript" src="../static/general.js"></script>
+    <title>Beerseba</title>
+</head>
+<body onload="cargar_eventos_loginuser()">
+      
+	<div id="java1">
+    </div>
+        
+	<div class="wrapper">
+		<form name= "mylogin" id="mylogin" action="/receivedatalogin" method="post">
+			<h2>Login</h2>
+			<div class="input-field" id="input-mail">
+				<input name="mail" type="text" id="email" required>
+				<span class="barra"></span>
+				<label class="mailcss">Ingresar Email</label>
+			</div>
+			<div class="warningS">
+				<p class="warning" id="warning-mail"></p>
+			</div>
+
+			<div class="input-field" id="input-pass">
+				<input name= "password" type="password" id="password" required>
+				<span class="barra"></span>
+				<label class="passcss">Ingresar constraseña</label> 
+			</div>
+
+			<div class="warningS">
+			<p class="warning" id="warning-password"></p>
+			</div>
+
+			<div class="forget">
+				<label for="remember">
+					<input type="checkbox" id="remember">
+					<p>Recordarme</p>
+				</label>
+				<a class="forgot"  href="#">¿Olvidaste tu contraseña?</a>
+			</div>
+			<h4>{{param}}</h4>
+			<button id="lastbtn" type="submit">Log In</button>
+			<div class="register">
+				<p>¿No tiene cuenta?
+					<a href="/signup">Registrate</a>
+				</p>
+				
+			</div>
+		</form>
+	</div>
+
+
+</body>
+</html>

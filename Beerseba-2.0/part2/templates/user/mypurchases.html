@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beerseba</title>
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="../static/mypurchase/mypurchase.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script language="javascript" type="text/javascript" src="../static/general.js"></script>
+    <script language="javascript" type="text/javascript" src="../static/mypurchase/mypurchase.js"></script>
+</head>
+<body onload="cargar_eventos_mypurchase()">
+
+
+  <div id="java1">
+  </div>
+
+  <div class="nav-extra" id="nav-adicional">
+    <input type="search" placeholder="Buscar">
+    {% if  session.get('nombre')!=None %}        
+    <div class="profile-dropdown" id="parte2">
+            <!-- Nombre e imagen -->
+            <div class="profile-dropdown-btn" >
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+              <span>
+                  {{session.get('nombre')}}
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
+            </div>
+            <!-- Desplegable 2 -->
+            <div class="profile-dropdown-list">
+              <div class="profile-dropdown-list-item">
+                <a href="/editprofile">
+                  <i class="fa-regular fa-user"></i>
+                  Editar Perfil
+                </a>
+              </div> 
+
+              <div class="profile-dropdown-list-item">
+                <a href="/favorites">
+                  <i class="fas fa-heart"></i>
+                  Favoritos
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+              <a href="/mypurchases">
+                <i class="fa-solid fa-chart-line"></i>
+                  Mis Compras
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/helpsupport">
+                  <i class="fa-regular fa-circle-question"></i>
+                  Ayuda & Soporte
+                </a>
+              </div>
+              <hr/>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/logout" id="salir">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Salir
+                </a>
+              </div>
+            </div>
+    </div>
+    {% else %}        
+    <div class="cont-parte1" id="parte1">
+      <a href="/signup">Crear cuenta</a> | <a href="/loginuser">Iniciar sesión</a>
+    </div>
+    {% endif %}
+  </div>
+  
+  <section class="my_products">
+    <h2>Mis Compras</h2>
+  {# recorre la sesion compras #}
+  {% for compra in session.get("compras")%}
+    <div>
+      <div class="my_products_grid">
+        <div class="date">
+            <h5>Compra #{{ compra[0] }} Compra realizada el {{ compra[2] }}</h5>
+            <div class="my_product">
+              <div class="info">
+                  <div id="demo{{ compra[0] }}">
+                    <button class="buy-again-btn" type="button10" onclick="loadDoc('{{ compra[0] }}')">Ver detalles</button>  <!--  Pendiente de pasar a javascript -->
+                  </div>
+                  
+              </div>
+          </div>
+        </div>
+        
+    </div>
+  {% endfor %}
+
+  </section>
+    
+    
+    
+</body>
+</html>

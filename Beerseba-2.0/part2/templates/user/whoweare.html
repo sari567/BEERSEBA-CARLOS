@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beerseba</title>
+    <link rel="stylesheet" href="../static/homepage/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script language="javascript" type="text/javascript" src="../static/whoweare/whoweare.js"></script>
+    <script language="javascript" type="text/javascript" src="../static/general.js"></script>
+</head>
+  
+<body id="cuerpo_1" onload="cargar_eventos_whoweare()">
+ 
+ 
+  <div id="java1">
+  </div>
+
+  <div class="nav-extra" id="nav-adicional">
+    <input type="search" placeholder="Buscar">
+    {% if  session.get('nombre')!=None %}        
+    <div class="profile-dropdown" id="parte2">
+            <!-- Nombre e imagen -->
+            <div class="profile-dropdown-btn" >
+              <div class="profile-img">
+                <i class="fa-solid fa-circle"></i>
+              </div>
+              <span>
+                  {{session.get('nombre')}}
+                <i class="fa-solid fa-angle-down"></i>
+              </span>
+            </div>
+            <!-- Desplegable 2 -->
+            <div class="profile-dropdown-list">
+              <div class="profile-dropdown-list-item">
+                <a href="/editprofile">
+                  <i class="fa-regular fa-user"></i>
+                  Editar Perfil
+                </a>
+              </div> 
+
+              <div class="profile-dropdown-list-item">
+                <a href="/favorites">
+                  <i class="fas fa-heart"></i>
+                  Favoritos
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+              <a href="/mypurchases.html">
+                <i class="fa-solid fa-chart-line"></i>
+                  Mis Compras
+                </a>
+              </div>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/helpsupport">
+                  <i class="fa-regular fa-circle-question"></i>
+                  Ayuda & Soporte
+                </a>
+              </div>
+              <hr/>
+    
+              <div class="profile-dropdown-list-item">
+                <a href="/logout" id="salir">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  Salir
+                </a>
+              </div>
+            </div>
+    </div>
+    {% else %}        
+    <div class="cont-parte1" id="parte1">
+      <a href="/signup">Crear cuenta</a> | <a href="/loginuser">Iniciar sesión</a>
+    </div>
+    {% endif %}
+  </div>
+
+
+<div class="section">
+    
+
+    <div class="container-text">
+        <div class="container-title"> 
+            <span id="title">Quiénes Somos</span>
+        </div>
+
+        <div class="text">
+            <p>Somos Ana, Miguel y Sara, una familia emprendedora que quiso darle forma a la voz interior que tienen muchas mujeres, a través de prendas de indumentaria urbana y moderna. 
+            
+            <p>Beerseba refleja que Dios ha hecho de cada mujer una bendición y un ser único.</p>
+            
+            <p>En Beerseba, creemos que la verdadera belleza comienza desde el interior y se irradia hacia el exterior. Nuestra visión es clara: reflejar el alma, el carácter y la esencia de cada mujer en su apariencia externa, combinando la profundidad interior con la elegancia exterior.</p>
+            
+            <p>Nos dedicamos a diseñar indumentaria que no solo adorna, sino que también expresa. Cada prenda que creamos es una manifestación de la individualidad, la fortaleza y la gracia de la mujer Beerseba.</p>
+            
+            <p>Sabemos que la moda es más que ropa; es una declaración de identidad y un símbolo de empoderamiento. Nuestra misión es acompañar a la mujer Beerseba en todos los ámbitos de su vida, brindándole las herramientas para que se sienta segura, confiada y auténtica en cada paso que da.</p>
+        </div>
+    </div>
+</div>   
+
+</body>
+</html>
