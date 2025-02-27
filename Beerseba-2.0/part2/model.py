@@ -52,3 +52,27 @@ def request_products():
 #print(search_table_by_data("USUARIOS","Email","ctupac_29@outlook.com"))
 #print(search_stock_of_produt(("6","8","rojo")))
 #print(search_user_by_mail("martha24@gmail.com"))
+
+def request_pedido():
+    sql = "SELECT compra.fechahora, usuarios.nombre, usuarios.apellido,compra_detalle.cantidad,producto.Nombre AS Producto,  producto_talle.talle,compra_detalle.precio,compra.estado FROM compra  INNER JOIN USUARIOS  ON usuarios.id = compra.id_usuario INNER JOIN Compra_Detalle ON compra.id = compra_detalle.id_compra INNER JOIN Producto_talle ON compra_detalle.Id_producto_talle = producto_talle.id INNER JOIN producto  ON producto.id = producto_talle.id_producto;"
+    resultado = selectDB(sql=sql) 
+    if not resultado:
+        return []  # Devolver lista vacía si no hay resultados
+    
+    # Convertir la lista de tuplas en una lista de diccionarios para facilitar el acceso en la plantilla
+    pedidos = []
+    for row in resultado:
+        pedidos.append({
+            "fecha": row[0],
+            "nombre": row[1],
+            "apellido": row[2],
+            "cantidad": row[3],
+            "producto": row[4],
+            "talle": row[5],
+            "precio": row[6],
+            "estado": row[7],
+            "producto_id": row[8]
+        })
+    
+    return pedidos
+    return selectDB(sql=sql)

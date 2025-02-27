@@ -164,6 +164,10 @@ def  pedirproductos():
     lista = request_products()
     return lista
 
+def  detallePedido():
+    lista = request_pedido()
+    return lista
+
 ##########################################################################
 # - - F I N - - Functions for user - - - - - - - - - - - - - - - - - - - -
 ########################################################################## 

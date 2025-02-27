@@ -19,7 +19,7 @@ def register_routes(app):
     def loginuser():
         return render_template("user/loginuser.html")
     
-    @app.route("/signup")
+    @app.route("/signup")   
     def signup():
         return render_template("user/signup.html")
     
@@ -138,7 +138,7 @@ def register_routes(app):
     # ImmutableMultiDict([('id', '1')])
     def mypurchases1():
         param = cargar_detalle_producto(request)
-        return render_template("purchase1.html", param = param)
+        return render_template("ayax/purchase1.html", param =param)
     
     # url for ask stock for each product
     @app.route('/stockproducto', methods=["POST", "GET"]) 
@@ -157,13 +157,13 @@ def register_routes(app):
         result = comprar_producto(request)
         # not logged in
         if result == 1:
-            return redirect("user/loginuser")
+            return redirect("/loginuser")
         # not stock
         elif result == 2:
             return "Verificar el stock del producto"
         # sucessfully purchase
         else:           
-            return redirect("user/mypurchases")
+            return redirect("/mypurchases")
         
 
     # URL for log in a user 

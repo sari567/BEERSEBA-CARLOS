@@ -4,12 +4,20 @@
     <h1>Detalles</h1>
 </head>
 <body>
-    <p>{{param[0][3]}} unidades</p>
-    <p>talle {{param[0][5]}}</p>
-    <p>${{param[0][4]}}</p>
-    <div class="lala">
-        <img src="{{param[1][3]}}">
+    <div class= "my_product">
+        <div class = "info">
+            <div class="text">
+                <p>{{param[0][3]}} unidades</p>
+                <p>talle {{param[0][5]}}</p>
+                <p>${{param[0][4]}}</p>
+            </div>
+            <button class="buy-again-btn"><a href="/productos/{{param[0][2]}}">Volver a Comprar</a></button>
+        </div>
+
+        
+        <div class="lala">
+            <img src="{{param[1][3]}}">
+        </div>
     </div>
-    <button class="buy-again-btn"><a href="/productos/{{param[0][2]}}">Volver a Comprar</a></button>
 </body>
 </html>

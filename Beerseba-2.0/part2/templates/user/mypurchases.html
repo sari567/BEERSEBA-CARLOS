@@ -87,13 +87,14 @@
             <div class="my_product">
               <div class="info">
                   <div id="demo{{ compra[0] }}">
-                    <button class="buy-again-btn" type="button10" onclick="loadDoc('{{ compra[0] }}')">Ver detalles</button>  <!--  Pendiente de pasar a javascript -->
+                    <button class="detalles-btn" type="button10" onclick="loadDoc('{{ compra[0] }}')">Ver detalles</button>  <!--  Pendiente de pasar a javascript -->
                   </div>
                   
               </div>
           </div>
+          <ul id="detalles-compra-{{ compra[0] }}" class="detalle-compra" style="display: none;"></ul>
+
         </div>
-        
     </div>
   {% endfor %}
 

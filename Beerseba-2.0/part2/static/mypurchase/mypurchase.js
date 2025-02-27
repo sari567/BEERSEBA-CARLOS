@@ -1,4 +1,4 @@
-
+/**
 function loadDoc(id) {
     const xhttp = new XMLHttpRequest();
     
@@ -10,6 +10,24 @@ function loadDoc(id) {
     formData.append('id', id)                      
     xhttp.send(formData);
   }
+     */
+
+  async function loadDoc(id) {
+
+    try {
+        cargar_producto()
+        var response = await fetch("receibemypurchases", {
+            method: "POST",
+            body: new URLSearchParams({ id: id })
+        });
+        var data = await response.text();
+        document.getElementById('demo' + id).innerHTML = data;
+    } catch (error) {
+        console.error("Error:", error);
+    }
+
+}
+
 
 
 // Initialize form validation
