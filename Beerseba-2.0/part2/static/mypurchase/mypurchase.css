@@ -65,6 +65,7 @@ body{
     border: 1px solid #ccc;
     border-radius: 10px;
     padding-left: 30px;
+    padding-right: 30px;
     text-align: left;
     color: #FF5E62;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

@@ -41,6 +41,29 @@ def request_products():
     sql = "SELECT * FROM Producto"
     return selectDB(sql=sql)
 
+'''
+def register_favorite(data):
+    sql = "INSERT INTO favorite (Id, Id_producto, Id_usuario) VALUES (%s,%s,%s);"
+    val = data
+    return insertDB(sql=sql,val=val)  
+'''
+
+def add_favorite(user_id, product_id):
+    """ Agrega un producto a la tabla de favoritos """
+    sql = "INSERT INTO favoritos (id_usuario, id_producto) VALUES (%s, %s)"
+    insertDB(val=(user_id, product_id), sql=sql)
+
+def remove_favorite(user_id, product_id):
+    """ Elimina un producto de la tabla de favoritos """
+    sql = "DELETE FROM favoritos WHERE id_usuario = %s AND id_producto = %s"
+    insertDB(val=(user_id, product_id), sql=sql)
+
+def is_favorite(user_id, product_id):
+    """ Verifica si un producto ya está en favoritos """
+    sql = "SELECT id FROM favoritos WHERE id_usuario = %s AND id_producto = %s"
+    result = selectDB(val=(user_id, product_id), sql=sql)
+    return len(result) > 0  # Devuelve True si ya está en favoritos
+
 
 #prueba = ('CARLOS JULIAN', 'TUPAC YUPANQUI', 'Canyon123**', 'cliente', '9295701145', '483220077', 'DNI', '../static/pics/profile.png', 'CTUPAC_29@OUTLOOK.COM')
 #modify_user(prueba)

@@ -164,6 +164,29 @@ def  pedirproductos():
     lista = request_products()
     return lista
 
+
+def agregar_favorito(id_usuario, id_producto):
+    """Agrega un producto a la lista de favoritos del usuario"""
+    sql = "INSERT INTO favoritos (id_usuario, id_producto) VALUES (%s, %s)"
+    valores = (id_usuario, id_producto)
+    return insertDB(sql=sql, val=valores)
+
+def eliminar_favorito(id_usuario, id_producto):
+    """Elimina un producto de la lista de favoritos del usuario"""
+    sql = "DELETE FROM favoritos WHERE id_usuario = %s AND id_producto = %s"
+    valores = (id_usuario, id_producto)
+    return deleteDB(sql=sql, val=valores)
+
+def obtener_favoritos(id_usuario):
+    """Obtiene la lista de productos favoritos del usuario"""
+    sql = """SELECT p.id, p.nombre, p.imagen, p.precio
+             FROM productos p
+             INNER JOIN favoritos f ON p.id = f.id_producto
+             WHERE f.id_usuario = %s"""
+    valores = (id_usuario,)
+    return selectDB(sql=sql, val=valores)
+
+
 ##########################################################################
 # - - F I N - - Functions for user - - - - - - - - - - - - - - - - - - - -
 ########################################################################## 
