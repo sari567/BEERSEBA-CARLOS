@@ -86,27 +86,31 @@ label{
 
 .item01{
     padding-left: 0;
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 2 ;
     width: 100%;
     margin-top: 3%;
-
+    margin-left: 15%;
+    
 }
 
 .item01-5{
-    grid-column:3;
+    grid-column: 3;
     grid-row: 2 ;
     width: 100%;
     margin-top: 3%;
+    margin-right: -40%;
+    margin-left: -15%;
 
 }
 
 .item02{
-    grid-column: 2 / span 2;
-    grid-row: 5;
+    grid-column: 1 / span 2;
+    grid-row: 3;
     width: 70%;
     margin-top: -10%;
     margin-bottom: -6%;
+    margin-left: 10%;
 }
 
 .profile-pic input{
@@ -124,10 +128,9 @@ label{
 
 .lastbtn{
     grid-column: 1/ span 3;
-    grid-row: 6 ;
+    grid-row: 4 ;
     justify-items: center;
     padding: 20px;
-    padding-top: 5%;
     margin-left: 30%;
 
 }

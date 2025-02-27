@@ -172,7 +172,7 @@ def register_routes(app):
     # ImmutableMultiDict([('mail', 'MARTHA24@GMAIL.COM'), ('password', 'Canyon123**')])
     def receivedatalogin1():    
         if ingresoUsuarioValido1(request):
-            return redirect("admin")
+            return redirect("/admin")
         else:
             param = "Usuario o contraseña incorrecta."
             return render_template("admin/login",param=param)

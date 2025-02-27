@@ -26,7 +26,6 @@
           <h3>Configuración de Cuenta</h3>
       </div>
 
-
       <div class="grid-item item01">
           <label for="nom01" class="box1">Nombre:</label><br>
           <input class="w3-input" type="text" id="nombre" name="nombre" value="{{session.get('nombre')}}"><br>
@@ -36,6 +35,10 @@
 
           <label for="nom01" class="box1">Celular:</label><br>
           <input class="w3-input" type="text" id="celular" name="celular" value="{{session.get('celular')}}"><br>
+
+          <label class="box1">Contraseña:</label><br>
+          <input class="w3-input" type="password" id="contra" name="clave"/><br>
+
       </div>
 
       <div class="grid-item item01-5">
@@ -64,21 +67,18 @@
           <label class="box1">N° de documento:</label><br>
           <input class="w3-input" name="identity" type="text" id="documento" value="{{session.get('numerodni')}}"><br>
 
-      </div>
-
-      <div class="grid-item item02">
-
-        <label class="box1">Contraseña:</label><br>
-        <input class="w3-input" type="password" id="contra" name="clave"/><br>
+          <br>
+          <h4>{{param}}</h4>
 
 
       </div>
+
 
 
       <div class="grid-item lastbtn">
           <button type="submit" class="box2" id="button_prueba">Guardar Cambios</button>
       </div>
-      <h4>{{param}}</h4>
+      
 
   </form>
   {% endif %}
