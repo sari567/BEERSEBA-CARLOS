@@ -55,7 +55,7 @@ def consultarDB(mydb,sQuery="",val=None,title=False):
             # Para obtener los nombres de las columnas
             if title:
                 myresult.insert(0,mycursor.column_names)
-    except pymysql.cursors.Error as e:
+    except pymysql.Error as e:
         print("ERROR ->",e)   
     return myresult
 
@@ -76,7 +76,7 @@ def ejecutarDB(mydb,sQuery="",val=None):
         mydb.commit()   
         #res=mycursor.rowcount        # filas afectadas
         res=mycursor.lastrowid
-    except pymysql.cursors.Error as e:
+    except pymysql.Error as e:
         mydb.rollback()
         print("ERROR ->",e)    
     return res
