@@ -48,37 +48,7 @@ def register_routes(app):
     def mypurchases():
         return render_template("user/mypurchases.html")
     
-    @app.route('/favorites')
-    def favorites():
-        if 'id' not in session:
-            return redirect('login')
-        
-        id_usuario = session['id']
-        favoritos = obtener_favoritos(id_usuario)
-
-        return render_template('user/favorites.html', favoritos=favoritos)
-
-
-    @app.route('/toggle_favorito', methods=['POST'])
-    def toggle_favorito():
-        """Agrega o elimina un producto de favoritos"""
-        if 'id' not in session:
-            return redirect('login')
-
-        id_usuario = session['id']
-        id_producto = request.form.get('id_producto')
-
-        # Verificamos si el producto ya está en favoritos
-        sql = "SELECT * FROM favoritos WHERE id_usuario = %s AND id_producto = %s"
-        fav_existente = selectDB(sql=sql, val=(id_usuario, id_producto))
-
-        
-        if fav_existente:
-            eliminar_favorito(id_usuario, id_producto)
-        else:
-            agregar_favorito(id_usuario, id_producto)
-
-        return redirect(request.referrer)
+    
     ################################################
 
     @app.route("/login")
@@ -158,7 +128,7 @@ def register_routes(app):
     @app.route("/receivedataeditprofile", methods=["POST", "GET"])
     # ImmutableMultiDict([('imgUser', ''), ('nombre', 'MARTHA'), ('apellido', 'REYES'), ('celular', '5847640589'), ('mail', 'MARTHA24@GMAIL.COM'), ('seleccionar', 'DNI'), ('identity', '536434370'), ('clave', 'Canyon123**')])
     def receivedataeditprofile():     
-        if cambiarDatosUsuario(request, app.config['UPLOAD_FOLDER']):
+        if cambiarDatosUsuario(request, "NULL"):
             param = "Cambio realizado con exito."
         else:
             param = "Contraseña incorrecta."

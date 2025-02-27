@@ -63,9 +63,9 @@ def cambiarDatosUsuario(request, path):
 
     if account != None and account[4] == data["clave"]: # Valida la clave y el mail coincidan antes de actualizar.
 
-        newpath = upload1(request.files, path, account[9])
+        #newpath = upload1(request.files, path, account[9])
 
-        account=(data["nombre"].upper(),data["apellido"].upper(),data["clave"],"cliente",data["celular"],data["identity"],data["seleccionar"].upper(),newpath, data["mail"].upper())
+        account=(data["nombre"].upper(),data["apellido"].upper(),data["clave"],"cliente",data["celular"],data["identity"],data["seleccionar"].upper(), path, data["mail"].upper())
         print(account)
         modify_user(account)
 
@@ -266,7 +266,7 @@ def upload1(requestfile,pathfolder, picture):
     file.save(pathfile)
 
     if picture!=None:
-        path1 = "/home/car/Project1/ucaweb/Beerseba-2.0/part2/static/upload/"+picture
+        path1 = "../static/upload/"+picture
         os.remove(path1)
 
     return filename_unique
