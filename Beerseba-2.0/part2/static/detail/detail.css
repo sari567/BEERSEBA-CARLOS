@@ -324,7 +324,7 @@ a{
         max-width: 100%;  Ocupa el ancho total de la pantalla 
         padding: 5px;  Reduce el padding 
         margin: auto;
-        border-radius: 0px; /* Elimina los bordes redondeados en móviles 
+        border-radius: 0px; 
     }
     */
     .product-container {
@@ -335,7 +335,7 @@ a{
         text-align: center;
             display: flex;
             background-color: white;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, .1); /*sombra en todo el recuadro*/
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, .1); 
             border-radius: 5px;
             margin: auto;    
             margin-top: 20px;
@@ -343,30 +343,29 @@ a{
     }
 
     .product-image img {
-        width: 100%; /* Haz que la imagen ocupe todo el ancho de la pantalla */
-        height: auto;
+        width: 100%;
     }
 
     .product-details {
-        padding: 15px; /* Reduce el padding en los detalles del producto */
+        padding: 15px;
     }
 
     h1 {
-        font-size: 20px; /* Reduce el tamaño del título en pantallas pequeñas */
+        font-size: 20px;
     }
 
     .price {
-        font-size: 18px; /* Reduce el tamaño de la fuente */
+        font-size: 18px; 
     }
 
     .quantity {
-        margin-left: 0; /* Centra la sección de cantidad en móviles */
+        margin-left: 0;
         width: 100%;
     }
 
     .btn-comprar {
         width: auto;        
-        font-size: 14px; /* Reduce el tamaño de fuente */
+        font-size: 14px;
         margin-right: 100px;
         margin-left: 1%;
         padding-left: 145px ;
@@ -374,7 +373,7 @@ a{
     }
 
     .barra-superior {
-        font-size: 12px; /* Reduce el tamaño de la fuente */
+        font-size: 12px; 
         padding: 5px 10px;
     }
     /*
@@ -427,7 +426,7 @@ a{
         text-align: center;
             display: flex;
             background-color: white;
-            box-shadow: 10px 10px 10px rgba(0, 0, 0, .1); /*sombra en todo el recuadro*/
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, .1); 
             border-radius: 5px;
             margin: auto;    
             margin-top: 20px;
